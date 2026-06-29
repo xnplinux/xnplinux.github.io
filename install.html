@@ -45,7 +45,7 @@ cd /mnt/xnp
 <p>Clone the official core repository and configuration templates:</p>
 <pre>
 mkdir -p root/repos && cd root/repos
-git clone https://github.com
+git clone https://sorry.xnp.is.soon!
 </pre>
 
 <h2>Step 3: Environment Configuration</h2>
@@ -56,16 +56,16 @@ source ~/.profile
 </pre>
 
 <h2>Step 4: Building the System</h2>
-<p>Compile and install core utilities using the xnp packager. No nano allowed, only pure vi workflow.</p>
+<p>Compile and install core utilities using the xnp packager.</p>
 <pre>
-xnp -b xnpfetch
-xnp -i xnpfetch
+xnp -b "package"
+xnp -i "package"
 </pre>
 
 <h2>Step 5: Verifying Installation</h2>
 <p>Run the dynamic info utility to verify the deployment:</p>
 <pre>
-xnpfetch
+"package"
 </pre>
 
 </body>
