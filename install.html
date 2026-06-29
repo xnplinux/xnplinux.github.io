@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XNP Linux - Installation Guide</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: monospace;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        a {
+            color: #5555ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 { color: #ff55ff; }
+        h2 { color: #55ffff; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">[ Back to Main ]</a>
+</nav>
+
+<hr style="border: 1px dashed #333;">
+
+<h1>XNP Linux Installation Guide</h1>
+<p>Follow these steps to deploy the meta-distribution inside your environment.</p>
+
+<h2>Step 1: Preparing Host & Directory</h2>
+<p>Create an isolated playground on your host system and move inside:</p>
+<pre>
+mkdir -p /mnt/xnp
+cd /mnt/xnp
+</pre>
+
+<h2>Step 2: Repository Setup</h2>
+<p>Clone the official core repository and configuration templates:</p>
+<pre>
+mkdir -p root/repos && cd root/repos
+git clone https://github.com
+</pre>
+
+<h2>Step 3: Environment Configuration</h2>
+<p>Lock the XNP system paths permanently into your profile setup:</p>
+<pre>
+echo 'export XNP_PATH="/root/repos/repo/core:$XNP_PATH"' >> ~/.profile
+source ~/.profile
+</pre>
+
+<h2>Step 4: Building the System</h2>
+<p>Compile and install core utilities using the xnp packager. No nano allowed, only pure vi workflow.</p>
+<pre>
+xnp -b xnpfetch
+xnp -i xnpfetch
+</pre>
+
+<h2>Step 5: Verifying Installation</h2>
+<p>Run the dynamic info utility to verify the deployment:</p>
+<pre>
+xnpfetch
+</pre>
+
+</body>
+</html>
