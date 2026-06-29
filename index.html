@@ -8,9 +8,10 @@
             background-color: #000000;
             color: #ffffff;
             font-family: monospace;
-            padding: 20px;
+            padding: 40px;
             font-size: 14px;
-            line-height: 1.2;
+            line-height: 1.6;
+            max-width: 800px;
         }
         a {
             color: #5555ff;
@@ -19,43 +20,56 @@
         a:hover {
             text-decoration: underline;
         }
-        pre {
-            overflow-x: auto;
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        h2 {
+            font-size: 16px;
+            color: #ff55ff;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #888888;
+            margin-bottom: 25px;
+        }
+        nav {
+            margin-bottom: 30px;
+        }
+        .code-block {
+            background-color: #111111;
+            padding: 15px;
+            border-left: 3px solid #333333;
+            margin: 15px 0;
         }
     </style>
 </head>
 <body>
 
+<h1>XNP Linux</h1>
+<div class="subtitle">A POSIX-compliant meta-distribution for x86_64.</div>
+
 <nav>
-    [XNP] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     <a href="install.html">Install</a> &nbsp;&nbsp; 
     <a href="#wiki">Wiki</a> &nbsp;&nbsp; 
-    <a href="https://github.com/xnplinux/xnplinux.github.io">GitHub</a>
+    <a href="https://github.com">GitHub</a>
 </nav>
 
-<hr style="border: 1px dashed #333;">
+<h2>Overview</h2>
+<p>XNP Linux is an independent, lightweight meta-distribution built for absolute control. It is designed to run standalone or seamlessly inside any host environment via chroot hosting. Strictly TTY only. No nano allowed, built with the xnp package manager.</p>
 
-<pre>
-+─────────────────────────────────────────────────────────────+
+<h2>Package System</h2>
+<p>The system utilizes <strong>xnp</strong>, a package manager written entirely in pure POSIX sh. It isolates build environments and maintains system cleanliness through a straightforward two-step workflow:</p>
 
-|                                                             |
-|   █   █ █   █ ████                                          |
-|    █ █  ██  █ █   █                                         |
-|     █   █ █ █ ████                                          |
-|    █ █  █  ██ █                                             |
-|   █   █ █   █ █       L I N U X                             |
-|                                                             |
-|   A POSIX-compliant meta-distribution for x86_64.           |
-|                                                             |
-|                                                             |
-+─────────────────────────────────────────────────────────────+
-</pre>
+<div class="code-block">
+xnp -b [package]  # Build package from source<br>
+xnp -i [package]  # Install package into system
+</div>
 
-<pre>
-* Overview ...................................................
-* Package System (xnp) .......................................
-* Installation Guide .........................................
-</pre>
+<p>More documentation, core repositories, and deployment guidelines can be found in the official installation section.</p>
 
 </body>
 </html>
