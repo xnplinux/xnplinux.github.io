@@ -45,16 +45,18 @@
 <h2>Step 1: Download & Extract Rootfs</h2>
 <p>Download the latest release and extract it to your desired chroot directory:</p>
 <pre>
-wget https://github.com
-mkdir rootfs && tar -xf xnplinux-v1.0.tar.gz -C rootfs
+wget https://github.com/xnplinux/xnplinux.github.io/releases/tag/v1.0.0/xnplinux-v1.0.tar.gz
+mkdir rootfs 
+sudo tar -xvf xnplinux-v1.0.tar.gz -C rootfs
 cd rootfs
 </pre>
 
 <h2>Step 2: Enter Environment & Build Packages</h2>
 <p>Mount essential filesystems, chroot into the system, and compile your software:</p>
 <pre>
+sudo mount -o bind /dev /home/your_name/rootfs/dev
+sudo chroot rootfs /bin/sh -l
 mount -t proc proc ./proc
-chroot . /bin/sh
 xnp -b package_name
 xnp -i package_name
 </pre>
@@ -63,7 +65,6 @@ xnp -i package_name
 <p>Launch your newly compiled binary to verify the installation. If the application fails to start, ensure the virtual filesystems are mounted properly:</p>
 <pre>
 package_name
-# If it fails: mount -t proc proc /proc, and try again
 </pre>
 
 </body>
