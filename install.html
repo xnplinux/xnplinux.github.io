@@ -56,8 +56,7 @@ sudo tar -xvf xnplinux-v1.2.0.tar.gz -C rootfs
 sudo mount -o bind /dev /home/your_name/rootfs/dev
 sudo chroot rootfs /bin/sh -l
 mount -t proc proc ./proc (if not work,just try it outside the chroot :/ )
-xnp -b package_name
-xnp -i package_name
+xnp -S package_name
 </pre>
 
 <h2>Step 3: Verify and Run</h2>
