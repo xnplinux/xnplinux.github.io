@@ -57,14 +57,14 @@ mkdir -p root/repos && cd root/repos
 git clone https://sorry.xnp.is.soon!
 </pre>
 
-<h2>Step 3: Environment Configuration</h2>
+<h2>Step 4: Environment Configuration</h2>
 <p>Lock the XNP system paths permanently into your profile setup:</p>
 <pre>
 echo 'export XNP_PATH="/root/repos/repo/core:$XNP_PATH"' >> ~/.profile
 source ~/.profile
 </pre>
 
-<h2>Step 4: Building the System</h2>
+<h2>Step 5: Building the System</h2>
 <p>Compile and install core utilities using the xnp packager.</p>
 <pre>
 xnp -b  package
