@@ -10,7 +10,7 @@
             font-family: monospace;
             padding: 20px;
             font-size: 14px;
-            line-height: 1.2;
+            line-height: 1.4;
         }
         a {
             color: #5555ff;
@@ -19,8 +19,16 @@
         a:hover {
             text-decoration: underline;
         }
-        h1 { color: #ff55ff; }
-        h2 { color: #55ffff; margin-top: 30px; }
+        h1 { color: #ff55ff; margin-bottom: 10px; }
+        h2 { color: #55ffff; margin-top: 20px; margin-bottom: 5px; }
+        pre {
+            background-color: #111111;
+            padding: 10px;
+            border: 1px solid #333333;
+            margin: 5px 0;
+            overflow-x: auto;
+        }
+        p { margin: 5px 0; }
     </style>
 </head>
 <body>
@@ -29,28 +37,33 @@
     <a href="index.html">[ Back to Main ]</a>
 </nav>
 
-<hr style="border: 1px dashed #333;">
+<hr style="border: 1px dashed #333; margin: 15px 0;">
 
 <h1>XNP Linux Installation Guide</h1>
-<p>Follow these steps to deploy the meta-distribution inside your environment.</p>
+<p>Follow these steps to deploy the meta-distribution inside your host environment.</p>
     
-<h2>Step 1: Download xnp linux</h2>
-<p>In your system, type this:</p>
+<h2>Step 1: Download & Extract Rootfs</h2>
+<p>Download the latest release and extract it to your desired chroot directory:</p>
 <pre>
-wget https://github.com/xnplinux/xnplinux.github.io/releases/tag/v1.0.0/xnplinux-v1.0.tar.gz
-
-<h2>Step 2: Building the System</h2>
-<p>Compile and install core utilities using the xnp packager.</p>
-<pre>
-xnp -b  package
-xnp -i  package
+wget https://github.com
+mkdir rootfs && tar -xf xnplinux-v1.0.tar.gz -C rootfs
+cd rootfs
 </pre>
 
-<h2>Step 3: Verifying Installation</h2>
-<p>Run the dynamic info utility to verify the deployment:</p>
+<h2>Step 2: Enter Environment & Build Packages</h2>
+<p>Mount essential filesystems, chroot into the system, and compile your software:</p>
+<pre>
+mount -t proc proc ./proc
+chroot . /bin/sh
+xnp -b package_name
+xnp -i package_name
+</pre>
+
+<h2>Step 3: Verify and Run</h2>
+<p>Launch your newly compiled binary to verify the installation. If the application fails to start, ensure the virtual filesystems are mounted properly:</p>
 <pre>
 package_name
-if not run,try this mount -t proc proc /proc, and try again
+# If it fails: mount -t proc proc /proc, and try again
 </pre>
 
 </body>
