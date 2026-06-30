@@ -33,48 +33,24 @@
 
 <h1>XNP Linux Installation Guide</h1>
 <p>Follow these steps to deploy the meta-distribution inside your environment.</p>
-
-<h2>Step 1: Preparing Host & Directory</h2>
-<p>Create an isolated playground on your host system and move inside:</p>
-<pre>
-mkdir -p /mnt/
-cd /mnt/
-</pre>
     
-<h2>Step 2: Download xnp linux</h2>
+<h2>Step 1: Download xnp linux</h2>
 <p>In your system, type this:</p>
 <pre>
-wget https://github.com/xnp/is/soon/sorry
-tar xvf xnp-chroot-26.tar.xz
-Jump in your system! (don't forget exit from /mnt)
-/mnt/xnp/xnp-chroot /mnt
-</pre>
-   
-<h2>Step 3: Repository Setup</h2>
-<p>Clone the official core repository and configuration templates:</p>
-<pre>
-mkdir -p root/repos && cd root/repos
-git clone https://sorry.xnp.is.soon!
-</pre>
+wget https://github.com/xnplinux/xnplinux.github.io/releases/tag/v1.0.0/xnplinux-v1.0.tar.gz
 
-<h2>Step 4: Environment Configuration</h2>
-<p>Lock the XNP system paths permanently into your profile setup:</p>
-<pre>
-export XNP_PATH="/root/repos/repo/core:$XNP_PATH" >> ~/.profile
-source ~/.profile
-</pre>
-
-<h2>Step 5: Building the System</h2>
+<h2>Step 2: Building the System</h2>
 <p>Compile and install core utilities using the xnp packager.</p>
 <pre>
 xnp -b  package
 xnp -i  package
 </pre>
 
-<h2>Step 6: Verifying Installation</h2>
+<h2>Step 3: Verifying Installation</h2>
 <p>Run the dynamic info utility to verify the deployment:</p>
 <pre>
 package_name
+if not run,try this mount -t proc proc /proc, and try again
 </pre>
 
 </body>
