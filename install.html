@@ -45,10 +45,9 @@
 <h2>Step 1: Download & Extract Rootfs</h2>
 <p>Download the latest release and extract it to your desired chroot directory:</p>
 <pre>
-wget https://github.com/xnplinux/xnplinux.github.io/releases/download/v1.2.0/xnplinux-v1.2.0.tar.gz or download tar.gz from releases
+wget https://github.com/xnplinux/xnplinux.github.io/releases/download/v1.2.0/xnplinux-v1.2.0.tar.gz
 mkdir rootfs 
 sudo tar -xvf xnplinux-v1.2.0.tar.gz -C rootfs
-cd rootfs
 </pre>
 
 <h2>Step 2: Enter Environment & Build Packages</h2>
@@ -56,7 +55,7 @@ cd rootfs
 <pre>
 sudo mount -o bind /dev /home/your_name/rootfs/dev
 sudo chroot rootfs /bin/sh -l
-mount -t proc proc ./proc
+mount -t proc proc ./proc (if not work,just try it outside the chroot :/ )
 xnp -b package_name
 xnp -i package_name
 </pre>
