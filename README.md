@@ -6,7 +6,7 @@ Designed to run seamlessly inside any host environment via chroot hosting. Inspi
 
 ## Features
 * **Keep It Simple:** No bloated systemd, no unneeded dependencies.
-* **Pure POSIX sh:** The entire package manager (`xnp`) is written in lightweight, standard shell script.
+* **POSIX sh:** The entire package manager (`xnp`) is written in lightweight, standard shell script.
 * **Source-based:** Compile everything from source for your exact architecture (`x86_64`).
 * **Independent & Lightweight:** Control every single byte of your system.
 
