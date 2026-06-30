@@ -37,11 +37,20 @@
 <h2>Step 1: Preparing Host & Directory</h2>
 <p>Create an isolated playground on your host system and move inside:</p>
 <pre>
-mkdir -p /mnt/xnp
-cd /mnt/xnp
+mkdir -p /mnt/
+cd /mnt/
 </pre>
-
-<h2>Step 2: Repository Setup</h2>
+    
+<h2>Step 2: Download xnp linux</h2>
+<p>In your system, type this:</p>
+<pre>
+wget https://github.com/xnp/is/soon/sorry
+tar xvf xnp-chroot-26.tar.xz
+Jump in your system! (don't forget exit from /mnt)
+/mnt/xnp/xnp-chroot /mnt
+</pre>
+   
+<h2>Step 3: Repository Setup</h2>
 <p>Clone the official core repository and configuration templates:</p>
 <pre>
 mkdir -p root/repos && cd root/repos
@@ -58,14 +67,14 @@ source ~/.profile
 <h2>Step 4: Building the System</h2>
 <p>Compile and install core utilities using the xnp packager.</p>
 <pre>
-xnp -b "package"
-xnp -i "package"
+xnp -b  package
+xnp -i  package
 </pre>
 
-<h2>Step 5: Verifying Installation</h2>
+<h2>Step 6: Verifying Installation</h2>
 <p>Run the dynamic info utility to verify the deployment:</p>
 <pre>
-"package"
+package_name
 </pre>
 
 </body>
