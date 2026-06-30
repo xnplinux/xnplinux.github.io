@@ -12,7 +12,7 @@ Designed to run seamlessly inside any host environment via chroot hosting. Inspi
 
 ## Quick Start
 To install XNP Linux, follow the official installation guide on our website:
-👉 [xnplinux.github.io/install.html]
+https://xnplinux.github.io/install.html
 
 ---
 *Maintained and developed by MaPlayer.*
